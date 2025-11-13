@@ -4,8 +4,6 @@ npm --version
 mysql --version
 
 # 2. Crear estructura
-mkdir blog-recetas
-cd blog-recetas
 mkdir backend
 cd backend
 mkdir src src/controllers src/models src/routes src/config
