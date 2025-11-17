@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= recipe.title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    
+    <div class="recipe-details">
+        <h1><%= recipe.title %></h1>
+        <img src="<%= recipe.image %>" alt="<%= recipe.title %>">
+        <p><strong>Ingredients:</strong></p>
+        <ul>
+            <% recipe.ingredients.forEach(function(ingredient) { %>
+                <li><%= ingredient %></li>
+            <% }); %>
+        </ul>
+        <p><strong>Instructions:</strong></p>
+        <p><%= recipe.instructions %></p>
+    </div>
+
+    <div class="actions">
+        <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a>
+        <form action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Recipe</button>
+        </form>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
