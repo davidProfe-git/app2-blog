@@ -1,137 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DULCE SABOR</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Sabor - Blog de Postres</title>
+  <link rel="stylesheet" href="./css/estilo.css">
+
+
 </head>
 <body>
-  <header class="navbar">
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Menú</a></li>
-        <li><a href="#">Postres</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Galería</a></li>
-      </ul>
-    </nav>
-    <div class="auth-buttons">
-      <a href="#" class="login">Iniciar Sesión</a>
-      <a href="#" class="register">Registrar</a>
+    <header>
+        <nav>
+            <div class="logo">🍰 Dulce Sabor</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#recetas">Recetas</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="recetas-destacadas">
+    <h2>Recetas Destacadas</h2>
+
+    <div class="recetas-container">
+
+        <div class="receta-card">
+            <img src="assets/images.jpg" alt="Brownies caseros" class="img-receta">
+
+            <h3>Brownies Caseros</h3>
+            <p>Deliciosos, húmedos y llenos de chocolate. Un postre fácil y perfecto para cualquier momento.</p>
+        </div>
+
+     <div class="receta-card">
+    <img src="assets/imagen .jpg" alt="Tiramisú Clásico" class="img-receta">
+    <h3>Tiramisú Clásico</h3>
+    <p>Un postre italiano cremoso con capas de bizcocho, café y crema de mascarpone. Suave y elegante.</p>
+</div>
+
+
+
+        <div class="receta-card">
+            <img src="pie-limon.jpg" alt="Pie de Limón">
+            <h3>Pie de Limón</h3>
+            <p>Una mezcla perfecta de dulce y ácido, con merengue tostado.</p>
+        </div>
+
     </div>
-  </header>
+</section>
 
-  <!-- Sección principal (hero) -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>¡Endulza tu día con nuestros postres!</h1>
-      <p>Pasteles, cupcakes, galletas y más. Cada bocado está hecho con amor y los mejores ingredientes para alegrar tu día.</p>
-      <a href="#" class="btn">Ver Postres</a>
+
+        <section id="galeria">
+            <h2 class="section-title">Galería de Postres</h2>
+            <div class="gallery">
+                <div class="gallery-item">🍓 Postre 1</div>
+                <div class="gallery-item">🍪 Postre 2</div>
+                <div class="gallery-item">🍮 Postre 3</div>
+                <div class="gallery-item">🧁 Postre 4</div>
+                <div class="gallery-item">🍰 Postre 5</div>
+                <div class="gallery-item">🫐 Postre 6</div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2>¡Contáctanos!</h2>
+            <p>¿Tienes una receta que quieras compartir o dudas? Escríbenos</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <p>Calle Dulce #45<br>Bogotá, Colombia</p>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <p>+57 300 987 6543</p>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <p>contacto@dulcesabor.com</p>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="hero-image">
-      <img src="imagenes/postre.png" alt="Postre delicioso">
-    </div>
-  </section>
 
-  <!-- Sección de productos -->
-  <main class="comida">
-    <h2 class="comida-titulo">Postres Populares</h2>
-    <div class="Platos">
-      <article class="Plato">
-        <img src="imagenes/pastel-fresa.png" alt="Pastel de fresa">
-        <h1>Pastel de Fresa</h1>
-        <p>Bizcocho suave con crema batida y fresas frescas, ideal para cualquier ocasión.</p>
-        <div class="plato-info">
-          <p>$8.000</p>
-          <button type="button">+</button>
-        </div>
-      </article>
-
-      <article class="Plato">
-        <img src="imagenes/cupcake-chocolate.png" alt="Cupcake de chocolate">
-        <h1>Cupcake de Chocolate</h1>
-        <p>Delicioso cupcake con cobertura cremosa de cacao, perfecto para acompañar tu café.</p>
-        <div class="plato-info">
-          <p>$6.500</p>
-          <button type="button">+</button>
-        </div>
-      </article>
-
-      <article class="Plato">
-        <img src="imagenes/cheesecake.png" alt="Cheesecake">
-        <h1>Cheesecake</h1>
-        <p>Una mezcla irresistible de queso crema y galleta con toque de frutos rojos.</p>
-        <div class="plato-info">
-          <p>$10.000</p>
-          <button type="button">+</button>
-        </div>
-      </article>
-
-      <article class="Plato">
-        <img src="imagenes/helado-vainilla.png" alt="Helado artesanal">
-        <h1>Helado Artesanal</h1>
-        <p>Helado cremoso de vainilla con trozos naturales, elaborado artesanalmente.</p>
-        <div class="plato-info">
-          <p>$7.000</p>
-          <button type="button">+</button>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <!-- Pie de página -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-row">
-        <div class="footer-links">
-          <h4>Blog</h4> 
-          <ul>
-            <li><a href="#">Recetas Caseras</a></li>
-            <li><a href="#">Consejos de Repostería</a></li>
-            <li><a href="#">Decoración de Postres</a></li>
-            <li><a href="#">Sabores del Mes</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links"> 
-          <h4>Productos</h4> 
-          <ul>
-            <li><a href="#">Tortas</a></li>
-            <li><a href="#">Cupcakes</a></li>
-            <li><a href="#">Galletas</a></li>
-            <li><a href="#">Helados</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links"> 
-          <h4>Compañía</h4> 
-          <ul>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contáctanos</a></li>
-            <li><a href="#">Términos y Condiciones</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links"> 
-          <h4>Redes Sociales</h4> 
-          <div class="social-icons">
-            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2025 Dulce Sabor. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
+    <footer>
+        <p>&copy; 2024 Dulce Sabor. Todos los derechos reservados.</p>
+        <p>Postres hechos con amor</p>
+    </footer>
 </body>
 </html>
