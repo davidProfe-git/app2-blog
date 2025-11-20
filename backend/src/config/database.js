@@ -11,4 +11,4 @@ const conectdb = mysql.createPool({
 
 })
 
-module.exports = conectdb;
+module.exports = conectdb; 
