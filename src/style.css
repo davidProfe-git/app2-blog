@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+
+
+.pinyon-script-regular {
+  font-family: "Pinyon Script", cursive;
+  font-weight: normal;
+  font-style: 150px;
+}
+
+footer {
+    background-color: #1a5f3b;
+}
+
