@@ -11,6 +11,19 @@
   font-style: 150px;
 }
 
+hr {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+  margin-bottom: 30px;
+  color: red;
+}
+
+
+
+
+
+
 footer {
     background-color: #1a5f3b;
 }
