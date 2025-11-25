@@ -2,8 +2,8 @@ const EXPRESS = require('express')
 const APP = EXPRESS()
 require('dotenv').config()
 const PORT = process.env.PORT
-
-APP.use('/api/recetas',recetasRoutes)
+const RECETASROUTES = require('./routes/recetasRoutes')
+APP.use('/api/recetas',RECETASROUTES)
 
 APP.get('/',(request, response) =>{
     response.json({mensaje : "Funciona la API"})
