@@ -1,5 +1,7 @@
-create database Recetas;
-use recetas; 
+create database Blog_Recetas;
+use Blog_Recetas; 
+
+
 
 CREATE TABLE usuarios (
     id_usuario INT PRIMARY KEY auto_increment,
@@ -62,4 +64,5 @@ VALUES
 (2, 1),  -- Brownies → Postres
 (3, 5),  -- Avena Nocturna → Desayuno
 (3, 4);  -- Avena Nocturna → Saludable
+
 
