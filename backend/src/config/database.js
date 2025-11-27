@@ -12,5 +12,5 @@ const conectdb = mysql.createPool({
 
 })
 
-
-module.exports = conectdb;
+const  promesaconecte = conectdb.promise();
+module.exports = promesaconecte;
