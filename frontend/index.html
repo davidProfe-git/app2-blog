@@ -93,10 +93,14 @@
 
 
     <!-- Contacto -->
-    <section id="contacto" class="contact">
-        <h2>¡Contáctanos!</h2>
-        <p>¿Tienes una receta que quieras compartir o dudas? Escríbenos</p>
+    <!-- Contacto -->
+<section id="contacto" class="contact">
+    <h2>¡Contáctanos!</h2>
+    <p>¿Tienes una receta que quieras compartir o alguna duda? Escríbenos 🍰</p>
 
+    <div class="contacto-container">
+
+        <!-- Información -->
         <div class="contact-info">
             <div class="contact-item">
                 <span>📍</span>
@@ -111,12 +115,45 @@
                 <p>contacto@dulcesabor.com</p>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Dulce Sabor. Todos los derechos reservados.</p>
-        <p>Postres hechos con amor</p>
-    </footer>
+        <!-- Formulario -->
+        <form class="form-contacto" id="form-contacto">
+            <h3>Envíanos un mensaje</h3>
+
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo" required>
+            <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
+
+            <p id="mensaje-exito" class="mensaje-exito" style="display: none;">
+                ¡Gracias por escribirnos! 💌 Te responderemos pronto.
+            </p>
+        </form>
+    </div>
+</section>
+...
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Dulce Sabor. Todos los derechos reservados.</p>
+    <p>Postres hechos con amor</p>
+</footer>
+
+<script>
+document.getElementById("form-contacto").addEventListener("submit", function(e) {
+    e.preventDefault(); // evita recargar la página
+
+    document.getElementById("mensaje-exito").style.display = "block";
+
+    // Limpia los campos
+    this.reset();
+
+    // Oculta el mensaje después de 3 segundos
+    setTimeout(() => {
+        document.getElementById("mensaje-exito").style.display = "none";
+    }, 3000);
+});
+</script>
+
 </body>
 </html>
