@@ -1,16 +1,13 @@
-const EXPRESS = require('express')
-const APP = EXPRESS()
-require('dotenv').config()
-const PORT = process.env.PORT
-const RECETASROUTES = require('./routes/recetasRoutes')
-APP.use('/api/recetas',RECETASROUTES)
+const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
+const recetasRoutes = require('./routes/recetasRoutes');
 
-APP.get('/',(request, response) =>{
-    response.json({mensaje : "Funciona la API"})
-})
+const app = express();
+app.use(express.json());
 
+app.use('/api/recetas', recetasRoutes);
 
-APP.listen(PORT, ()=>{
-    console.log(`el servidor esta corriendo en el puerto ${PORT}`)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`El servidor está corriendo en el puerto ${PORT}`));
 
-})

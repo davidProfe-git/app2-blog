@@ -1,8 +1,12 @@
-const EXPRESS = require('express')
-const ROUTER = EXPRESS.Router()
-const CONTROLLER = require('../controllers/recetasController')
+const express = require('express');
+const router = express.Router();
+const RecetaController = require('../controllers/recetasController');
 
-//mis rutas de la api
-ROUTER.get('/',CONTROLLER.obtenerRecetas)
+router.get('/', RecetaController.obtenerRecetas);
+router.get('/:id', RecetaController.obtenerPorId);
+router.post('/', RecetaController.crearReceta);
+router.put('/:id', RecetaController.actualizarReceta);
+router.delete('/:id', RecetaController.eliminarReceta);
 
-module.exports = ROUTER
+module.exports = router;
+
