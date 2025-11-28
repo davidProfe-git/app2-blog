@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
-require('dotenv').config()
+require('dotenv').config();
 
-const conectdB = mysql.createPool({
+const conectdb = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -9,7 +9,8 @@ const conectdB = mysql.createPool({
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
+
 })
 
-
-module.exports = conectdB;
+const  promesaconecte = conectdb.promise();
+module.exports = promesaconecte;

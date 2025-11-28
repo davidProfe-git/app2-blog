@@ -1,18 +1,33 @@
-const MODEL = require('../models/recetasModel')
+const { request } = require('express');
+const MODEL = require('../models/RecetaModel');
 
-class RecetasController{
-    //Get /api/recetas - obtiene le listado de recetas
-    static async obtenerRecetas(request, response){
+class RecetaControllers {
+    // Get /api/recetas - obtiene el listado de recetas
+    static async obtenerRecetas( ) {
         
-            const recetas = await MODEL.obtenerRecetas()
-            response.json({
+        const recetas = await MODEL.obtenerRecetas(Request, Response)
+        Response.json({
+            success: true,
+            data: recetas
+        })
+
+
+    }
+    static async obtenerPorId(Request, Response){
+        try{
+            const id = request.params
+            const receta = await MODEL.obtenerPorId(id)
+            Response.json({
                 success: true,
-                data: recetas
+                data: receta
             })
+            
+        }catch(error){
+            return error;
 
-        
+        } 
     }
 
 }
 
-module.exports = RecetasController
+module.exports = RecetaControllers
