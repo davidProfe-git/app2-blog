@@ -3,6 +3,7 @@ const APP = EXPRESS()
 require('dotenv').config()
 const PORT = process.env.PORT
 const RECETASROUTES = require('./routes/recetasRoutes')
+
 APP.use('/api/recetas',RECETASROUTES)
 
 APP.get('/',(request, response) =>{

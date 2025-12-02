@@ -8,9 +8,22 @@ class RecetasController{
             response.json({
                 success: true,
                 data: recetas
-            })
+            }) 
+    }
 
-        
+    static async obtenerPorId(request, response){
+        try{
+            const {id} = request.params
+            const receta = await MODEL.obtenerPorId(id)
+
+            response.json({
+                success: true,
+                data: receta
+            })
+        }catch(error){
+            return error;
+        }
+
     }
 
 }
