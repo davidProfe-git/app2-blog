@@ -20,6 +20,22 @@ class tattomodel {
         }
     }
 
+    static async createTattoo(tattooData) {
+        try {
+            const { nombre,precio} = tattooData;
+            const [result] = await DB.query(
+                'INSERT INTO productos (nombre,precio) VALUES (?, ?)',
+                [nombre,precio]
+            );
+            return rows
+        } catch (error) {
+            throw error;
+        }
+
+    }
+
+
+
 }
 
 module.exports = tattomodel;

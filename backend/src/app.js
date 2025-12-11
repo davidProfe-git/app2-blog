@@ -1,9 +1,12 @@
 const EXPRESS = require('express');
 const app = EXPRESS();
 require ('dotenv').config();
+const cors = require('cors')
 const port = process.env.PORT
 const tattoroutes = require('./routes/tattoroutes');
 
+
+app.use(cors())
 app.use('/tattoos/', tattoroutes)
 
 app.get('/', (req, res) => {
