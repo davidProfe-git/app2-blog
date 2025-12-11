@@ -1,40 +1,53 @@
-const api_url = 'http://localhost:3000/tattoos'
-const btn = document.getElementById('btn-menu');
-const modalcrear = document.getElementById('modal-crear');
-const fromulario = document.getElementById('formulario-crear');
-const btncerrar = document.getElementById('btn-cerrar');
-const btncancelar = document.getElementById('btn-cancelar');
-
-fetch(api_url).then(respuesta => respuesta.json()).then(datos => {
-    const principal = document.getElementById('productos')
-    datos.data.forEach( productos => {
-           principal.innerHTML = ` <div class="gallery">
-                <div class="gallery-item">${datos[0].nombre}</div>
-                <div class="gallery-item">🌹 Diseño 2</div>
-                <div class="gallery-item">💀 Diseño 3</div>
-                <div class="gallery-item">🐉 Diseño 4</div>
-                <div class="gallery-item">🦋 Diseño 5</div>
-                <div class="gallery-item">🌊 Diseño 6</div>
-            </div>`
-
-    });
+const API_URL = 'http://localhost:3000/api/recetas'
+const btnNuevaReceta = document.getElementById('btn-nueva-receta')
+const modal = document.getElementById('modal-receta')
+const formCrear = document.getElementById('form-receta')
+const btnCerrar = document.getElementById('btn-cerrar-modal')
+const btnCancelar = document.getElementById('btn-cancelar')
+//consumo de la api para pintar datos
+fetch(API_URL).then(respuesta => respuesta.json())
+.then(datos =>{
+    const principal = document.getElementById('recetas-lista')
+    datos.data.forEach(receta => {
+        principal.innerHTML += `
+            <div class="receta-card">
+                <img src="${receta.imagen_url}" alt="">
+                <div class="receta-card-body">
+                    <h3>${receta.titulo}</h3>
+                    <p class="receta-time">⏱️${receta.tiempo_preparacion} min</p>
+                    <p class="receta-ingredientes">${receta.ingredientes}</p>
+                </div>
+            </div>`    
+    });    
 })
 
-
-function cerrarmodal(){
-    modalcrear.classList.remove ('show')
-    formcrear.reset()
+function cerrarModal(){
+    modal.classList.remove('show')
+    formCrear.reset()
 }
 
-function crearproducto (){
-    formcrear.addEventListener ('submit', (evento) =>{
-        evento.preventDefault()
+
+function crearReceta(){
+    formCrear.addEventListener('submit',()=>{
+        const datos = {
+            titulo: document.getElementById('titulo'),
+            ingredientes: document.getElementById('ingredientes'),
+            instrucciones: document.getElementById('instrucciones'),
+            tiempo: document.getElementById('tiempo_preparacion'),
+            imagen_url: document.getElementById('imagen_url')
+
+        }
+
+
+
     })
 }
 
-btn.addEventListener('click', () =>{
-    modalcrear.classList.add ('show')    
+
+//captura de evento click y muestra
+btnNuevaReceta.addEventListener('click',()=>{
+    modal.classList.add('show')
 })
 
-btncerrar.addEventListener('click', cerrarmodal)
-btncancelar.addEventListener('click', cerrarmodal)
+btnCerrar.addEventListener('click',cerrarModal)
+btnCancelar.addEventListener('click',cerrarModal)

@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* ================= COLORES ================= */
+/* ================= VARIABLES DE COLOR ================= */
 :root {
   --rosa: #ffbfd4;
   --rosa-fuerte: #e54a86;
@@ -20,7 +20,7 @@ body {
   color: #333;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= HEADER / NAVBAR ================= */
 header {
   background: var(--rosa);
   padding: 15px 0;
@@ -59,7 +59,7 @@ nav ul li a:hover {
   color: var(--rosa-fuerte);
 }
 
-/* ================= HERO ================= */
+/* ================= HERO / INICIO ================= */
 .hero {
   background: url("https://i.pinimg.com/originals/8d/70/27/8d7027771944f8e5220c674f0062e1c6.jpg");
   background-size: cover;
@@ -104,7 +104,7 @@ nav ul li a:hover {
   justify-content: space-between;
   gap: 40px;
   padding: 80px 10%;
-  background: #fff7fa;
+  background: var(--fondo);
 }
 
 .inicio-contenido h1 {
@@ -284,7 +284,7 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 17px;
   font-weight: bold;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .btn-enviar:hover {
@@ -308,15 +308,48 @@ footer {
   font-weight: 500;
 }
 
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   .inicio {
     flex-direction: column;
     text-align: center;
   }
+
   .recetas-container {
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
+
+  .contacto-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
