@@ -18,7 +18,7 @@ CREATE TABLE recetas (
 -- Insertar 10 recetas variadas
 INSERT INTO recetas (titulo, ingredientes, instrucciones, tiempo_preparacion, imagen_url) VALUES
 
-('Pasta Carbonara', 
+('mondongo a la italiana', 
  '400g pasta, 200g panceta, 4 huevos, 100g queso parmesano, sal, pimienta negra', 
  '1. Cocinar la pasta en agua con sal. 2. Freír la panceta hasta que esté crujiente. 3. Batir huevos con queso parmesano rallado. 4. Escurrir la pasta y mezclar con panceta. 5. Retirar del fuego y agregar huevos batiendo rápido para que no se cocinen. 6. Servir con pimienta negra recién molida.',
  30,

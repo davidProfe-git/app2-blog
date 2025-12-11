@@ -1,9 +1,10 @@
 const EXPRESS = require('express')
 const APP = EXPRESS()
 require('dotenv').config()
+const cors = require('cors')
 const PORT = process.env.PORT
 const RECETASROUTES = require('./routes/recetasRoutes')
-
+APP.use(cors())
 APP.use('/api/recetas',RECETASROUTES)
 
 APP.get('/',(request, response) =>{

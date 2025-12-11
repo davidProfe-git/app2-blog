@@ -26,6 +26,33 @@ class RecetasController{
 
     }
 
+    static async crearReceta(request, response){
+        try {
+            
+            const {titulo, ingredientes, instrucciones, tiempo_preparacion} = request.body
+
+            if(!titulo || !ingredientes || !instrucciones || !tiempo_preparacion){
+                return response.status(400).json({
+                    success: false,
+                    message: 'Faltan datos obligatorios'
+                })
+            }else{
+                    const nuevaReceta = await MODEL.crearReceta(request.body)
+                    response.status(201).json({
+                        success: true,
+                        message: 'Receta creada exitosamente',
+                        data: nuevaReceta
+                    })
+                }
+        } catch (error) {
+            return error;
+
+
+
+          
+        }
+    }
+
 }
 
 module.exports = RecetasController

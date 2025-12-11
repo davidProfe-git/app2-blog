@@ -5,5 +5,6 @@ const CONTROLLER = require('../controllers/recetasController')
 //mis rutas de la api
 ROUTER.get('/',CONTROLLER.obtenerRecetas)
 ROUTER.get('/:id',CONTROLLER.obtenerPorId)
+ROUTER.post('/',CONTROLLER.crearReceta)
 
 module.exports = ROUTER
