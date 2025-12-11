@@ -24,5 +24,20 @@ class RecetaModel{
         } 
     }
 
+    async crearReceta(data){
+    try{
+        const {titulo, descripcion, tiempo_preparacion} = data
+        const [row] = await DB.query('insert into recetas(titulo, descripcion, tiempo_preparacion) values (?,?,?)'
+        [titulo, descripcion, tiempo_preparacion])
+        return rows
+    }catch (error){
+        throw error;
+
+    }
 }
+}
+
+
+
+
 module.exports = RecetaModel
