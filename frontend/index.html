@@ -6,33 +6,90 @@
     <title>Dulce Sabor - Blog de Postres</title>
     <link rel="stylesheet" href="./css/estilo.css">
 </head>
+
 <body>
+
+    <!-- HEADER -->
     <header>
         <nav>
             <div class="logo">🍰 Dulce Sabor</div>
+
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#recetas">Recetas</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+
+            <button id="btn-nueva-receta" class="btn btn-primary">+ Nueva Receta</button>
         </nav>
     </header>
-    <!-- Sección de Inicio -->
-<section id="inicio" class="inicio">
-    <div class="inicio-contenido">
-        <h1>Bienvenidos a <span>Dulce Sabor</span></h1>
-        <p>
-            El lugar donde los postres cobran vida.  
-            Aprende, inspírate y descubre recetas deliciosas para endulzar cada día.
-        </p>
-        <a href="#recetas" class="btn-inicio">Ver Recetas</a>
+
+    <!-- ================= MODAL ================= -->
+    <div id="modal-receta" class="modal" style="display:none;">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 id="modal-titulo">Nueva Receta</h2>
+                <button class="modal-close" id="btn-cerrar-modal">&times;</button>
+            </div>
+            
+            <form id="form-receta">
+
+                <!-- Título -->
+                <div class="form-group">
+                    <label for="titulo">Título *</label>
+                    <input type="text" id="titulo" name="titulo" required placeholder="Ej: Brownies Caseros">
+                </div>
+
+                <!-- Ingredientes -->
+                <div class="form-group">
+                    <label for="ingredientes">Ingredientes *</label>
+                    <textarea id="ingredientes" name="ingredientes" rows="4" required placeholder="Ej: 200g chocolate, 2 huevos..."></textarea>
+                </div>
+
+                <!-- Instrucciones -->
+                <div class="form-group">
+                    <label for="instrucciones">Instrucciones *</label>
+                    <textarea id="instrucciones" name="instrucciones" rows="6" required placeholder="1. Mezclar ingredientes..."></textarea>
+                </div>
+
+                <!-- Tiempo -->
+                <div class="form-group">
+                    <label for="tiempo_preparacion">Tiempo de Preparación (minutos) *</label>
+                    <input type="number" id="tiempo_preparacion" name="tiempo_preparacion" min="1" required placeholder="Ej: 45">
+                </div>
+
+                <!-- Imagen -->
+                <div class="form-group">
+                    <label for="imagen_url">URL de la Imagen (opcional)</label>
+                    <input type="url" id="imagen_url" name="imagen_url" placeholder="https://ejemplo.com/imagen.jpg">
+                </div>
+
+                <!-- Botones -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Receta</button>
+                </div>
+
+            </form>
+        </div>
     </div>
 
-    
-</section>
+    <div id="notificacion" class="notificacion"></div>
 
+    <!-- ================= INICIO ================= -->
+    <section id="inicio" class="inicio">
+        <div class="inicio-contenido">
+            <h1>Bienvenidos a <span>Dulce Sabor</span></h1>
+            <p>
+                El lugar donde los postres cobran vida.  
+                Aprende, inspírate y descubre recetas deliciosas para endulzar cada día.
+            </p>
+            <a href="#recetas" class="btn-inicio">Ver Recetas</a>
+        </div>
+    </section>
 
-    <!-- Sección de recetas destacadas -->
+    <!-- ================= RECETAS DESTACADAS ================= -->
     <section id="recetas" class="recetas-destacadas">
         <h2>Recetas Destacadas</h2>
 
@@ -41,119 +98,182 @@
             <div class="receta-card">
                 <img src="assets/images.jpg" alt="Brownies caseros" class="img-receta">
                 <h3>Brownies Caseros</h3>
-                <p>Deliciosos, húmedos y llenos de chocolate. Un postre fácil y perfecto para cualquier momento.</p>
+                  <div class="receta-info">
+        <div class="item-info">
+            <span class="icono">📝</span>
+            <span class="texto"><strong>Ingredientes:</strong> Chocolate, mantequilla, azúcar...</span>
+        </div>
+
+        <div class="item-info">
+            <span class="icono">⏱️</span>
+            <span class="texto"><strong>Tiempo:</strong> 45 min</span>
+        </div>
+    </div>
+</div>
+    </ul>
             </div>
 
             <div class="receta-card">
                 <img src="assets/imagen .jpg" alt="Tiramisú Clásico" class="img-receta">
                 <h3>Tiramisú Clásico</h3>
-                <p>Un postre italiano cremoso con capas de bizcocho, café y crema de mascarpone. Suave y elegante.</p>
+               <div class="receta-info">
+        <div class="item-info">
+            <span class="icono">📝</span>
+            <span class="texto"><strong>Ingredientes:</strong> Bizcochos, café, mascarpone, cacao...</span>
+        </div>
+
+        <div class="item-info">
+            <span class="icono">⏱️</span>
+            <span class="texto"><strong>Tiempo:</strong> 30 min</span>
+        </div>
+    </div>
+</div>
             </div>
 
             <div class="receta-card">
                 <img src="assets/images.webp" alt="Tres leches" class="img-receta">
                 <h3>Tres leches</h3>
-                <p>
-    Un postre clásico y cremoso, con un bizcocho suave que se empapa en una 
-    deliciosa mezcla de tres leches. Su textura esponjosa y su toque dulce 
-    lo convierten en un favorito irresistible para cualquier ocasión.
-</p>
-
+                  <div class="receta-info">
+        <div class="item-info">
+            <span class="icono">📝</span>
+            <span class="texto"><strong>Ingredientes:</strong> Bizcocho, leche evaporada, crema de leche...</span>
         </div>
-    <div class="receta-card">
-                <img src="assets/images (1).jpg" alt="Postre de limon" class="img-receta">
-                <h3>Carlota de Limón</h3>
-                <p>
-    Refrescante, cremosa y con el equilibrio perfecto entre dulce y ácido. 
-    La Carlota de Limón combina suaves capas de galletas con una mezcla 
-    sedosa de limón y leche condensada que se derrite en la boca.
-</p>
 
+        <div class="item-info">
+            <span class="icono">⏱️</span>
+            <span class="texto"><strong>Tiempo:</strong> 50 min</span>
+        </div>
+    </div>
+</div>
             </div>
 
             <div class="receta-card">
-                <img src="assets/flan-napolitano.jpg" alt="Tiramisú Clásico" class="img-receta">
-                <h3>flan napolitano</h3>
-                <p>
-    Un postre suave y cremoso, con una textura sedosa que se deshace en cada bocado. 
-    Su dulce capa de caramelo y su sabor tradicional lo convierten en un clásico irresistible.
-</p>
+                <img src="assets/images (1).jpg" alt="Carlota de Limón" class="img-receta">
+                <h3>Carlota de Limón</h3>
+               <div class="receta-info">
+        <div class="item-info">
+            <span class="icono">📝</span>
+            <span class="texto"><strong>Ingredientes:</strong> Galletas María, limón, leche condensada...</span>
+        </div>
 
+        <div class="item-info">
+            <span class="icono">⏱️</span>
+            <span class="texto"><strong>Tiempo:</strong> 20 min</span>
+        </div>
+    </div>
+</div>
             </div>
+
+            <div class="receta-card">
+                <img src="assets/flan-napolitano.jpg" alt="Flan napolitano" class="img-receta">
+                <h3>Flan Napolitano</h3>
+                 <div class="receta-info">
+        <div class="item-info">
+            <span class="icono">📝</span>
+            <span class="texto"><strong>Ingredientes:</strong> Leche, huevos, azúcar, vainilla...</span>
+        </div>
+
+        <div class="item-info">
+            <span class="icono">⏱️</span>
+            <span class="texto"><strong>Tiempo:</strong> 60 min</span>
+        </div>
+    </div>
+</div>
+            
 
             <div class="receta-card">
                 <img src="assets/descarga.jpg" alt="Galletas de Chocolate" class="img-receta">
-               <p>
-    Crujientes por fuera, suaves por dentro y cargadas de trocitos de chocolate que 
-    se derriten al morder. Un clásico delicioso para cualquier momento del día.
-</p>
-            </div>
-
-    </section>
-
-
-    <!-- Contacto -->
-    <!-- Contacto -->
-<section id="contacto" class="contact">
-    <h2>¡Contáctanos!</h2>
-    <p>¿Tienes una receta que quieras compartir o alguna duda? Escríbenos 🍰</p>
-
-    <div class="contacto-container">
-
-        <!-- Información -->
-        <div class="contact-info">
-            <div class="contact-item">
-                <span>📍</span>
-                <p>Calle Dulce #45<br>Bogotá, Colombia</p>
-            </div>
-            <div class="contact-item">
-                <span>📞</span>
-                <p>+57 3144689715</p>
-            </div>
-            <div class="contact-item">
-                <span>📧</span>
-                <p>contacto@dulcesabor.com</p>
-            </div>
+                <h3>Galletas de Chocolate</h3>
+               <div class="receta-info">
+        <div class="item-info">
+            <span class="icono">📝</span>
+            <span class="texto"><strong>Ingredientes:</strong> Harina, mantequilla, azúcar, chocolate...</span>
         </div>
 
-        <!-- Formulario -->
-        <form class="form-contacto" id="form-contacto">
-            <h3>Envíanos un mensaje</h3>
-
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo" required>
-            <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-
-            <button type="submit" class="btn-enviar">Enviar</button>
-
-            <p id="mensaje-exito" class="mensaje-exito" style="display: none;">
-                ¡Gracias por escribirnos! 💌 Te responderemos pronto.
-            </p>
-        </form>
+        <div class="item-info">
+            <span class="icono">⏱️</span>
+            <span class="texto"><strong>Tiempo:</strong> 25 min</span>
+        </div>
     </div>
-</section>
-...
-<!-- Footer -->
-<footer>
-    <p>&copy; 2024 Dulce Sabor. Todos los derechos reservados.</p>
-    <p>Postres hechos con amor</p>
-</footer>
+</div>
 
-<script>
-document.getElementById("form-contacto").addEventListener("submit", function(e) {
-    e.preventDefault(); // evita recargar la página
+        </div>
+    </section>
 
-    document.getElementById("mensaje-exito").style.display = "block";
+    <!-- ================= CONTACTO ================= -->
+    <section id="contacto" class="contact">
+        <h2>¡Contáctanos!</h2>
+        <p>¿Tienes una receta o duda? Escríbenos 🍰</p>
 
-    // Limpia los campos
-    this.reset();
+        <div class="contacto-container">
 
-    // Oculta el mensaje después de 3 segundos
-    setTimeout(() => {
-        document.getElementById("mensaje-exito").style.display = "none";
-    }, 3000);
-});
-</script>
+            <!-- Información -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <p>Calle Dulce #45<br>Bogotá, Colombia</p>
+                </div>
+
+                <div class="contact-item">
+                    <span>📞</span>
+                    <p>+57 3144689715</p>
+                </div>
+
+                <div class="contact-item">
+                    <span>📧</span>
+                    <p>contacto@dulcesabor.com</p>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <form class="form-contacto" id="form-contacto">
+                <h3>Envíanos un mensaje</h3>
+
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo" required>
+                <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+
+                <p id="mensaje-exito" class="mensaje-exito" style="display: none;">
+                    ¡Gracias por escribirnos! 💌 Te responderemos pronto.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Dulce Sabor. Todos los derechos reservados.</p>
+        <p>Postres hechos con amor</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // ========== Modal ==========
+        const modal = document.getElementById("modal-receta");
+        const abrir = document.getElementById("btn-nueva-receta");
+        const cerrar = document.getElementById("btn-cerrar-modal");
+        const cancelar = document.getElementById("btn-cancelar");
+
+        abrir.onclick = () => modal.style.display = "block";
+        cerrar.onclick = () => modal.style.display = "none";
+        cancelar.onclick = () => modal.style.display = "none";
+
+        window.onclick = (e) => {
+            if (e.target === modal) modal.style.display = "none";
+        };
+
+        // Mensaje de éxito contacto
+        document.getElementById("form-contacto").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("mensaje-exito").style.display = "block";
+            this.reset();
+            setTimeout(() => {
+                document.getElementById("mensaje-exito").style.display = "none";
+            }, 3000);
+        });
+    </script>
 
 </body>
 </html>

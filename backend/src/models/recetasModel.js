@@ -1,46 +1,37 @@
-const DB = require('../config/database'); // tu conexión MySQL
+const DB = require('../config/database')
 
-const RecetasModel = {
-    obtenerRecetas: async () => {
-        const [rows] = await DB.query('SELECT * FROM recetas');
-        return rows;
-    },
+class RecetaModel{
 
-    obtenerRecetaPorId: async (id) => {
-        const [rows] = await DB.query('SELECT * FROM recetas WHERE id = ?', [id]);
-        return rows[0]; // devuelve un objeto o undefined
-    },
+   //Read de nuestro CRUD
+   static async obtenerRecetas(){
+        try {
+            const [rows] = await DB.query('SELECT * FROM recetas')
+            return rows
+        } catch (error) {
+            throw error
+        }
+   } 
+ //para ver el detalle de la receta, se obtiene por id
+   static async obtenerPorId(id){
+        try {
+            const [row] = await DB.query('SELECT * FROM recetas WHERE id= ? ',[id])
+            return row
+        } catch (error) {
+            throw error
+        }    
 
-    crearReceta: async (receta) => {
-        const { titulo, ingredientes, instrucciones, tiempo_preparacion, imagen_url } = receta;
-        const [result] = await DB.query(
-            'INSERT INTO recetas (titulo, ingredientes, instrucciones, tiempo_preparacion, imagen_url) VALUES (?, ?, ?, ?, ?)',
-            [titulo, ingredientes, instrucciones, tiempo_preparacion, imagen_url]
-        );
-        return { id: result.insertId, ...receta };
-    },
+   }
 
-    actualizarReceta: async (id, receta) => {
-        const { titulo, ingredientes, instrucciones, tiempo_preparacion, imagen_url } = receta;
-        const [result] = await DB.query(
-            'UPDATE recetas SET titulo=?, ingredientes=?, instrucciones=?, tiempo_preparacion=?, imagen_url=? WHERE id=?',
-            [titulo, ingredientes, instrucciones, tiempo_preparacion, imagen_url, id]
-        );
-        return result.affectedRows;
-    },
-
-    eliminarReceta: async (id) => {
-        const [result] = await DB.query('DELETE FROM recetas WHERE id=?', [id]);
-        return result.affectedRows;
+   static async crearReceta(data){
+        try {
+            const {titulo, ingredientes, instrucciones, tiempo_preparacion} = data
+            const [rows] = await DB.query('INSERT INTO recetas (titulo, ingredientes, instrucciones, tiempo_preparacion) VALUES (?,?,?,?)',
+            [titulo, ingredientes, instrucciones, tiempo_preparacion])
+            return rows
+        } catch (error) {
+            throw error
+        }
     }
-};
+}
 
-module.exports = RecetasModel;
-
-
-
-
-
-
-
-
+module.exports = RecetaModel
