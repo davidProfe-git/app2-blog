@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #e74c3c;
-    --secondary-color: #691f15;
+    --primary-color: #abd416;
+    --secondary-color: #cfe414;
     --background: #f5f5f5;
     --text-color: #333;
     --border-radius: 8px;
@@ -63,7 +63,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #c0392b;
+    background-color: #b3f108;
     transform: translateY(-2px);
 }
 
