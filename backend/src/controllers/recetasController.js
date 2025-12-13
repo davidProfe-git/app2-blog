@@ -8,6 +8,7 @@ class RecetasController{
             response.json({
                 success: true,
                 data: recetas
+<<<<<<< HEAD
             }) 
     }
 
@@ -51,8 +52,17 @@ class RecetasController{
 
           
         }
+=======
+            })
+
+        
+>>>>>>> origin/alexander
     }
 
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/alexander
 module.exports = RecetasController

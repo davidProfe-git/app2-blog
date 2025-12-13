@@ -4,6 +4,7 @@ class RecetaModel{
 
    //Read de nuestro CRUD
    static async obtenerRecetas(){
+<<<<<<< HEAD
         try {
             const [rows] = await DB.query('SELECT * FROM recetas')
             return rows
@@ -32,6 +33,23 @@ class RecetaModel{
             throw error
         }
     }
+=======
+    try {
+        const [rows] = await DB.query('SELECT * FROM recetas')
+        return rows
+    } catch (error) {
+        throw error
+    }
+
+
+
+
+
+
+
+   } 
+
+>>>>>>> origin/alexander
 }
 
 module.exports = RecetaModel
